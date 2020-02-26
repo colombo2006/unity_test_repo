@@ -10,6 +10,7 @@ namespace Commander.Editor {
         private const string XCODE_PROJ = "proj";
 
         private static string mode;
+        private static string scene;
         private static string keystorePath;
         private static string keystorePassword;
         private static string aliasName;
@@ -72,6 +73,7 @@ namespace Commander.Editor {
 
             var ini_file = new IniFile2("config.ini");
             mode = ini_file.ReadINI("Config", "MODE");
+            scene = ini_file.ReadINI("Scene", "Assets\\Scenes\\SampleScene.unity");
 
 //            appIdentifier = ini_file.ReadINI("Config", "APP_IDENTIFIER");
 //            appName = ini_file.ReadINI("Config", "APP_NAME");
@@ -80,6 +82,7 @@ namespace Commander.Editor {
 //            versionCode = Convert.ToInt32(ini_file.ReadINI("Config", "APP_VERSION_CODE"));
 
             Debug.LogWarning("MODE\t\t\t" + mode);
+            Debug.LogWarning("Scene\t\t\t" + scene);
 
             int code = BuildIos();
             EditorApplication.Exit(code);
@@ -87,7 +90,7 @@ namespace Commander.Editor {
 
         [MenuItem("Commander/Build/Android")]
         public static int BuildAndroid() {
-            string[] scenes = { "Assets/_Scenes/Main.unity" };
+            string[] scenes = { scene };
             BuildOptions buildOptions = BuildOptions.None;
             if (mode != "PRODUCTION")
                 buildOptions = buildOptions | BuildOptions.Development | BuildOptions.AllowDebugging;
