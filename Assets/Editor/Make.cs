@@ -80,19 +80,7 @@ namespace Commander.Editor {
 //            versionCode = Convert.ToInt32(ini_file.ReadINI("Config", "APP_VERSION_CODE"));
 
             Debug.LogWarning("MODE\t\t\t" + mode);
-            Debug.LogWarning("ALIAS_PASSWORD\t\t\t" + aliasPassword);
-            Debug.LogWarning("APP_IDENTIFIER\t\t\t" + appIdentifier);
-            Debug.LogWarning("APP_NAME\t\t\t" + appName);
-            Debug.LogWarning("COMPANY_NAME\t\t\t" + companyName);
-            Debug.LogWarning("APP_VERSION\t\t\t" + version);
-            Debug.LogWarning("APP_VERSION_CODE\t\t\t" + ini_file.ReadINI("Config", "APP_VERSION_CODE"));
 
-            if (string.IsNullOrEmpty(keystorePath) || string.IsNullOrEmpty(keystorePassword) || string.IsNullOrEmpty(aliasName) || string.IsNullOrEmpty(aliasPassword))
-            {
-                Debug.LogError("Keystore is required for Android build");
-                EditorApplication.Exit(1);
-                return;
-            }
             int code = BuildIos();
             EditorApplication.Exit(code);
         }
