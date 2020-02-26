@@ -115,7 +115,7 @@ namespace Commander.Editor {
         [MenuItem("Commander/Build/iOS")]
         public static int BuildIos()
         {
-            string[] scenes = { "Assets/_Scenes/Main.unity" };
+            string[] scenes = { scene };
             BuildOptions buildOptions = BuildOptions.None;
             if (mode != "PRODUCTION")
                 buildOptions = buildOptions | BuildOptions.Development | BuildOptions.AllowDebugging;
