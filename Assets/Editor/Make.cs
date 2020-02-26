@@ -72,11 +72,12 @@ namespace Commander.Editor {
 
             var ini_file = new IniFile2("config.ini");
             mode = ini_file.ReadINI("Config", "MODE");
-            appIdentifier = ini_file.ReadINI("Config", "APP_IDENTIFIER");
-            appName = ini_file.ReadINI("Config", "APP_NAME");
-            companyName = ini_file.ReadINI("Config", "COMPANY_NAME");
-            version = ini_file.ReadINI("Config", "APP_VERSION");
-            versionCode = Convert.ToInt32(ini_file.ReadINI("Config", "APP_VERSION_CODE"));
+
+//            appIdentifier = ini_file.ReadINI("Config", "APP_IDENTIFIER");
+//            appName = ini_file.ReadINI("Config", "APP_NAME");
+//            companyName = ini_file.ReadINI("Config", "COMPANY_NAME");
+//            version = ini_file.ReadINI("Config", "APP_VERSION");
+//            versionCode = Convert.ToInt32(ini_file.ReadINI("Config", "APP_VERSION_CODE"));
 
             Debug.LogWarning("MODE\t\t\t" + mode);
             Debug.LogWarning("ALIAS_PASSWORD\t\t\t" + aliasPassword);
