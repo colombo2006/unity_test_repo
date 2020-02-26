@@ -73,7 +73,7 @@ namespace Commander.Editor {
 
             var ini_file = new IniFile2("config.ini");
             mode = ini_file.ReadINI("Config", "MODE");
-            scene = ini_file.ReadINI("Scene", "Assets\\Scenes\\SampleScene.unity");
+            scene = ini_file.ReadINI("Config", "Scene");
 
 //            appIdentifier = ini_file.ReadINI("Config", "APP_IDENTIFIER");
 //            appName = ini_file.ReadINI("Config", "APP_NAME");
